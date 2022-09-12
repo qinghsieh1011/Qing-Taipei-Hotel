@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+	  
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  
+	  
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.0.0.css" rel="stylesheet">
+	<link href="css/css1.css" rel="stylesheet">
+	  
+  </head>
+  <body background="img/booking-restaurant.jpg">
+  	<!-- body code goes here -->
+
+	  	  <!-- Navbar -->
+<div class="w3-top">
+  <div class=" w3-theme w3-top w3-right-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <h3 class="w3-bar-item w3-button w3-theme-l1 w3-left">Ur Taipel Hotel</h3>
+
+<a class="w3-bar-item w3-button w3-hover-dark-gray w3-right decoration"  href="index.html">回首頁</a>
+
+	  
+    	  
+</div>
+		
+</div>
+	  
+	  
+	  
+    <div class="row">
+	    <div class="offset-lg-1 col-lg-5">
+		
+			<div class="card col-md-4 offset-lg-0 col-lg-10 top">
+			  <div class="card-header">餐廳訂位</div>
+				   <ul class="list-group list-group-flush">
+					 <li class="list-group-item">
+						 <label>餐廳選擇</label>
+						  <select id="select1">
+							  <option >義饗食堂 Ur Italian Restaurant</option>
+							  <option >探索廚房 Ur Kitchen</option>
+							  <option >Shu Sushi</option>
+							  <option >翠谷中餐廳</option>
+							  <option >Ur Bistro</option>
+						  </select>
+					 </li>
+					 <li class="list-group-item">
+					   <label>訂位日期
+							<input type="date" id="res-date">
+					   </label>  
+					 </li>
+					 <li class="list-group-item">
+					   <label>用餐時段</label>
+						  <select  id="select2">
+							  <option >11:30</option>
+							  <option >12:00</option>
+							  <option >12:30</option>
+							  <option >13:00</option>
+							  <option >17:30</option>
+							  <option >18:00</option>
+							  <option >18:00</option>
+							  <option >18:30</option>
+							  <option >19:00</option>
+							</select>  
+					 </li>
+					 <li class="list-group-item">
+					   <label>成人數</label>
+						 <input type="number" min="1" max="12" id="res-adult">
+						<label>兒童數(120公分以下)</label>
+						 <input type="number" min="0" max="12" id="res-child">
+					 </li>
+				  </ul>
+			  </div><br>
+		   
+<!--填寫聯絡資訊-->
+		   <div class="card col-md-4 col-lg-10" id="contact-info">
+		     <div class="card-header">填寫聯絡資訊</div>
+		     <ul class="list-group list-group-flush">
+				 <li class="list-group-item">
+					 <label>訂位人姓名</label>
+					 <input type="text" id="res-name" autocomplete="off">
+					 <input type="radio" name="sexGroup" id="sex1">先生
+					 <input type="radio" name="sexGroup" id="sex2">女士
+				 </li>
+				 <li class="list-group-item">
+				   <label>訂位人電話</label>
+					  <input type="text" id="res-phone" autocomplete="off"> 
+				 </li>
+				 <li class="list-group-item">
+				   <label>訂位人E-mail</label>
+					  <input type="text" id="res-email" autocomplete="off"> 
+				 </li>
+				 <li class="list-group-item">
+				   <label>用餐目的</label>
+						  <select  id="select3">
+							  <option >慶祝生日</option>
+							  <option >朋友聚會</option>
+							  <option >家庭聚餐</option>
+							  <option >公司聚餐</option>
+							  <option >情侶用餐</option>
+							  <option >尾牙春酒</option>
+							  <option >其他目的</option>
+							</select> 
+				 </li>
+				 <li class="list-group-item">
+					 <input type="button" class="btn btn-info" value="確認" onClick="restaurant()">
+				 </li>
+			  </ul>
+		
+		  </div>
+		</div>
+		
+	    <div class="col-lg-6">
+			
+			<div class="card col-md-4 offset-lg-0 col-lg-8 top" id="res-chk-list">
+			<div class="card-header card-header2">訂單明細</div>
+			  <ul class="list-group list-group-flush">
+			    <li class="list-group-item inline">餐廳選擇: <p type="text" id="res-chk"></p></li>
+			    <li class="list-group-item inline">訂位日期: <p type="text" id="res-date-chk"></p></li>
+			    <li class="list-group-item inline">用餐時段: <p type="text" id="res-time-chk"></p></li>
+				  
+				<li class="list-group-item inline">
+					成人數: <p type="text" id="res-adult-chk"></p>
+				  	兒童數: <p type="text" id="res-child-chk"></p>
+				</li>
+			    <li class="list-group-item inline">
+					訂位人姓名: <p type="text" id="res-name-chk"></p>
+				  	<p type="text" name="sexShow" id="sexShow"></p>
+				</li>
+			    <li class="list-group-item inline">訂位人電話: <p type="text" id="res-phone-chk"></p></li>
+				<li class="list-group-item inline">訂位人E-mail: <p type="text" id="res-email-chk"></p></li>
+			    <li class="list-group-item inline">用餐目的: <p type="text" id="res-purpose-chk"></p></li>
+				<li class="list-group-item"><a href="index.html"><input type="button" class="btn btn-danger" value="確認送出" onClick="dispContactInfo()"></a></li> 
+
+				 
+		    </ul>
+		</div>
+	</div>
+  </div>
+	  
+	 
+<footer>	  
+    <div class="w3-container w3-theme w3-center top">
+      <div class="footer-text">
+			  <h7>台北市忠孝東路一段12號</h7><br>
+		      <h7>客服中心：02 2321 5511</h7><br>
+	  		  <h7>餐廳訂位專線：02 2321 1818</h7><br>
+	          <h7>E-mail：sheraton@sheratongrandtaipei.com</h7>
+		  </div>
+    </div>
+</footer> 
+	  
+	  
+	<script src="js/myjs.js"></script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.2.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.0.0.js"></script>
+  </body>
+</html>
+
+<script type="text/javascript">
+<!--
+var resChkList=document.getElementById("res-chk-list");
+	resChkList.hidden=true;
+//-->
+</script>

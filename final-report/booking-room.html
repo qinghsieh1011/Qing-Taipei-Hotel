@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Untitled Document</title>
+	  
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap -->
+	<link href="css/bootstrap-4.0.0.css" rel="stylesheet">
+	<link href="css/css1.css" rel="stylesheet">
+	 
+  </head>
+   <body background="img/寰宇套房.jpg">
+  	<!-- body code goes here -->
+	  
+	  <!-- Navbar -->
+<div class="w3-top">
+  <div class=" w3-theme w3-top w3-right-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <h3 class="w3-bar-item w3-button w3-theme-l1 w3-left">Ur Taipel Hotel</h3>
+
+<a class="w3-bar-item w3-button w3-hover-dark-gray w3-right decoration"  href="index.html">回首頁</a>
+
+	  
+    	  
+</div>
+		
+</div>
+	  
+	  
+
+<!--選填訂單-->
+<div class="row">
+      <div class="col-lg-6">
+		<div class="card col-md-4 offset-lg-4 col-lg-6 top">
+		  <div class="card-header ">訂房選擇</div>
+		  <ul class="list-group list-group-flush">
+			<li class="list-group-item">入住日期 <input type="date" id="start-date"></li>
+			<li class="list-group-item">退房日期 <input type="date" id="end-date"></li>
+			<li class="list-group-item inline">房型: <p type="text" id="room-chk"></p><input type="button" class="btn btn-sm nowrap" value="查詢空房" onClick="search()"></li>
+			<li class="list-group-item">人數: <input type="number" max="4" min="1" id="person-num"></li>
+			<li class="list-group-item"><input type="button" class="btn btn-info" value="開始訂房" onClick="book()"></li>
+		  </ul>
+		</div>	
+		  
+		  
+<!--訂單明細顯示-->	
+		  <div class="card col-md-4 offset-lg-4 col-lg-6" id="chk-list">
+		    <div class="card-header card-header2">訂單明細</div>
+		    <ul class="list-group list-group-flush">
+		      <li class="list-group-item inline">入住日期: <p type="text" name="date2" id="start-date-chk"></p></li>
+		      <li class="list-group-item inline">退房日期: <p type="text" name="date2" id="end-date-chk"></p></li>
+		      <li class="list-group-item inline">房型: <p type="text" id="room-chk-display"></p></li>
+			  <li class="list-group-item inline">人數: <p type="text" id="person-chk"></p></li>
+			  <li class="list-group-item"><a href="index.html"><input type="button" class="btn btn-danger" value="確認送出" onClick="search()"></a></li>
+	        </ul>
+	    </div>
+		  	 
+		  
+  </div>
+	  
+	
+	
+  <div class="col-lg-5 top">
+	  
+<div class="room" id="room1">  
+	  <div class="card w-50 float">
+            <img class="card-img-top" src="img/房型介紹/豪華單人房.jpg" alt="Card image cap">
+            <div class="card-body">
+				<h5 class="card-title">豪華單人房</h5>
+				<h6>一大床(含早餐)</h6>
+              <h6 class="price"><b>TWD 5,299</b></h6>
+	    <button class="btn btn-warning" onClick="roomChk1()" id="r1-chk">BOOK NOW</button>
+            </div>
+       </div>
+</div>
+	  
+
+
+	<div class="room" id="room2">
+          <div class="card w-50 float">
+            <img class="card-img-top" src="img/房型介紹/豪華雙人房.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">豪華雙人房</h5>
+              <h6>一大床(含早餐)</h6>
+              <h6 class="price">TWD 6,000</h6>
+			<button class="btn btn-warning" onClick="roomChk2()" id="r2-chk" value="222">BOOK NOW</button>
+            </div>
+          </div>
+	</div>
+	  
+	<div class="room" id="room3">
+          <div class="card w-50 float">
+            <img class="card-img-top" src="img/房型介紹/行政單人房.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">行政單人房</h5>
+              <h6>一大床(不含早餐)</h6>
+              <h6 class="price">TWD 6,800</h6>
+			<button class="btn btn-warning" onClick="roomChk3()" id="r3-chk" value="333">BOOK NOW</button>
+            </div>
+          </div>
+	</div>
+	  
+	 
+	<div class="room" id="room4">
+          <div class="card w-50 float">
+            <img class="card-img-top" src="img/房型介紹/行政雙人房.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">行政雙人房</h5>
+              <h6>兩大床(不含早餐)</h6>
+			  <h6 class="price">TWD 7,000</h6>
+			<button class="btn btn-warning" onClick="roomChk4()" id="r4-chk">BOOK NOW</button>
+            </div>
+          </div>
+        </div>
+
+	  
+
+<div class="room" id="room5">
+
+          <div class="card w-50 float">
+            <img src="img/房型介紹/Ur套房.jpg" alt="Card image cap" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Ur套房</h5>
+              <h6>套房住宿專案</h6>
+              <h6 class="price">TWD 8,899</h6>
+			<button class="btn btn-warning" onClick="roomChk5()" id="r5-chk">BOOK NOW</button>
+            </div>
+          </div>
+	</div>
+	  
+<div class="room" id="room6">
+          <div class="card w-50 float">
+            <img class="card-img-top" src="img/房型介紹/總統套房.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">總統套房</h5>
+              <h6>套房住宿專案</h6>
+              <h6 class="price">TWD 10,899</h6>
+			<button class="btn btn-warning" onClick="roomChk6()" id="r6-chk">BOOK NOW</button>
+            </div>
+          </div>
+</div>
+	
+	
+	
+	  
+	  
+	  
+  </div>
+</div>
+	   
+	<script src="js/myjs.js"></script>
+	   
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="js/jquery-3.2.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/popper.min.js"></script> 
+	<script src="js/bootstrap-4.0.0.js"></script>
+  </body>
+</html>
+
+
