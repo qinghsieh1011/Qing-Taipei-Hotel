@@ -141,7 +141,7 @@ function search()
 		b.value="";
 	}
 	
-	else if (a>="2020-01-01" && b<="2020-01-12")
+	else if (a>="2022-09-20" && b<="2022-09-30")
 		{
 			r1.hidden=true;
 			r2.hidden=true;
@@ -150,7 +150,7 @@ function search()
 			r5.hidden=false;
 			r6.hidden=true;
 		}
-	else if (a>="2020-01-13" && b<="2020-01-19")
+	else if (a>="2022-10-01" && b<="2022-10-10")
 		{
 			r1.hidden=false;
 			r2.hidden=false;
@@ -160,7 +160,7 @@ function search()
 			r6.hidden=false;
 		}
 	
-	else if (a>="2020-01-20" && b<="2020-01-31")
+	else if (a>="2022-10-11" && b<="2022-10-20")
 		{
 			r1.hidden=true;
 			r2.hidden=true;
@@ -170,7 +170,7 @@ function search()
 			r6.hidden=false;
 		}
 	
-	else if (a>="2020-02-01" && b<="2020-02-29")
+	else if (a>="2022-10-21" && b<="2020-11-30")
 		{
 			r1.hidden=true;
 			r2.hidden=false;
@@ -269,9 +269,7 @@ function book()
 		list.hidden=false;
 	}
 		
-		
 }	
-
 
 
 /*會員登入*/
@@ -282,7 +280,7 @@ function login()
 	var pwd=document.getElementById("password").value;
 	
 	
-	if (id=="ur" && pwd=="123")
+	if (id=="qing" && pwd=="1011")
 	{
 		alert("登入成功");
 		window.location.href="index.html";

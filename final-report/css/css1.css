@@ -11,6 +11,12 @@ body{
 
 
 /*index*/
+
+.carousel-item{
+	height: 600px;
+}
+
+
 a:hover{
     text-decoration:none;
 }
